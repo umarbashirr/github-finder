@@ -19,24 +19,24 @@ const Card = () => {
 			<header>
 				<img src={avatar_url} alt={name} />
 				<div>
-					<h4>{name}</h4>
-					<p>@{twitter_username || 'johndoe'}</p>
+					<h4>{name || 'N/A'}</h4>
+					<p>{`@${twitter_username}` || 'N/A'}</p>
 				</div>
 				<a href={html_url}>follow</a>
 			</header>
-			<p className='bio'>{bio}</p>
+			<p className='bio'>{bio || 'N/A'}</p>
 			<div className='links'>
 				<p>
 					<MdBusiness />
-					{company}
+					{company || 'N/A'}
 				</p>
 				<p>
 					<MdLocationOn />
-					{location}
+					{location || 'N/A'}
 				</p>
 				<p>
 					<MdLink />
-					<a href={`https://${blog}`}>{blog}</a>
+					<a href={`https://${blog}`}>{blog || 'N/A'}</a>
 				</p>
 			</div>
 		</Wrapper>
